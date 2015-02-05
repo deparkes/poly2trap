@@ -2,16 +2,29 @@
 """
 Created on Thu Feb 05 19:43:15 2015
 
-@author: Duncan
+@author: Duncan Parkes
+
+
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+# A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+# PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+# LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+# NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+# SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 """
 
 import seidel
 import matplotlib.pyplot as plt
 from descartes import PolygonPatch
-from shapely.geometry import MultiLineString, LinearRing, Polygon
-from shapely.ops import cascaded_union, polygonize
-#test3 = [[-5, 5],[-3, 0],[-5, -5],[5, -5],[5, 5]]
-#test3 = [[0,0], [1,1], [0,2],[3,2], [2,1],[3,0]]
+from shapely.geometry import  Polygon
+
+
 test = [[235.04275999999999, 739.07534999999996], [218.13066000000001, 719.73902999999996], 
             [218.15215000000001, 709.96821], [218.17362, 700.19740000000002], [243.15215000000001, 685.27858000000003], 
             [268.13065, 670.35974999999996], [268.13065, 660.81429000000003], [268.13065, 651.26882999999998],
@@ -54,6 +67,7 @@ for t in trapezoids:
     
     plt.gca().add_patch(PolygonPatch(Polygon(verts)))
     plt.gca().autoscale(tight=False)
+    print verts
 #    plt.show()
 #    for vert in verts:
 #        plt.plot(vert[0], vert[1], '-')
